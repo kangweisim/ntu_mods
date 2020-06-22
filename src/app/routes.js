@@ -48,6 +48,10 @@ const routes = [{
     exact: true,
     component: lazy(() => import('./views/topic/TopicDetail')),
   }, {
+    path: '/about',
+    exact: true,
+    component: lazy(() => import('./views/about'))
+  }, {
     component: () => <Redirect to="/errors/error-404" />
   }]
 }];
