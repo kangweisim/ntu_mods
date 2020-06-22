@@ -74,7 +74,7 @@ const ModulePrerequisites = props => {
     }).finally(() => mounted && setLoading(false));
   }
 
-  if (!model) return null;
+  if (!model || !models.length) return null;
 
   return (
     <Card {...rest} className={clsx(classes.root, className)}>
@@ -95,7 +95,7 @@ const ModulePrerequisites = props => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {models.map(({module: model}, index) => (
+                {models.map(({ module: model }, index) => (
                   <TableRow key={index}>
                     <TableCell>
                       <Link color="inherit" component={RouterLink} to={`${pathPrefix}/${model.id}/summary`} variant="h6">
